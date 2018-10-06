@@ -47,13 +47,13 @@ The following figures show the 5 class DR classification in our study, range fro
 <img src="image/5_DR.png" width="750" height="300" />
 
 #### Unbalanced training data set
-<img float="left" src="image/level_unbalanced.png" width="200" height="200" />
+<img align="left" src="image/level_unbalanced.png" width="200" height="200" />
 
 Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed. 
 
 In the dataset, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.  We used the the sampling with replacement statistics technique to boost up the data samples in category 2, 4 and 5:
 
-<img src="image/level_balanced.png" width="670" height="320" />
+<img src="image/level_balanced.png" width="600" height="250" />
 
 ### CNN Architectures
 #### InceptionV3
