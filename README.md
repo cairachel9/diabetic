@@ -18,16 +18,16 @@ Presently, detecting DR is a manual time-consuming process that requires a train
 
 Convolutional Neural Networks (CNNs), a branch of deep learning, have an impressive record for applications in image analysis and interpretation, including medical imaging. However, it wasn’t until several breakthroughs in neural networks such as the implementation of dropout, rectified linear units and the accompanying increase in computing power through graphical processor units (GPUs) that they became viable for more complex image recognition problems. Presently, large CNNs are used to successfully tackle highly complex computer vision tasks with many object classes to an impressive standard. CNNs are used in many current state-of-the-art image classification tasks such as the annual ImageNet challenges.
 
-## CNN for Diabetic Retinopathy
+## CNN for Diabetic Retinopathy detection
 
 [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) is feed-forward neural network.  It mainly consists of an input layer, many hidden layers (such as convolutional relu, pooling, flatten, fully connected and softmax layers) and a final multi-label classificationlayer. CNN methodology involves two stages of processing, a time consuming training stage where millions of images went through CNN architecture on many iterations to finalize the parameters of each layer (finalize the model parameters) and a second real-time prediction stage where each image in test dataset is feeded into the trained model to score and validate the model.
 
 <img src="image/CNN_DR.png" width="500" height="200" />
 
 The output of the above framework will emit a multi-class prediction with confidence score on each category
-..* 65% No DR (Normal)
-..* 15% Category-2 DR
-..* 10% Category-4 DR
+* 65% No DR (Normal)
+* 15% Category-2 DR
+* 10% Category-4 DR
 
 However, there are two issues with CNN methods on DR detection. One is achieving a desirable offset in sensitivity (patients correctly identified as having DR) and specificity (patients correctly identified as not having DR). This is significantly harder for a five class problem of normal, mild DR, moderate DR, severe DR, and proliferative DR classes. Second is the overfitting problem. Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed.
 
@@ -52,7 +52,9 @@ Skewed datasets cause the network to over-fit to the class most prominent in the
 ### Training, Pretrained model
 ### Evaluation, Attention Map
 
-## Prilimary Results
+## Prelimary Results
+
+The work is still ongoing.
 
 # Related Work
 # References
