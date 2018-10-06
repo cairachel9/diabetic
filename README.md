@@ -51,7 +51,9 @@ The following figures show the 5 class DR classification in our study, range fro
 
 Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed. 
 
-In the dataset, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.  We used the the sampling with replacement statistics technique to boost up the data samples in category 2, 4 and 5:
+In the Kaggle dataset with 35000 images, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.  To overcome the difference in data points distribution, we used the the sampling with [replacement statistics technique](https://web.ma.utexas.edu/users/parker/sampling/repl.htm) to boost up the data samples in category 2, 4 and 5:
+
+For the eye distribution between left and right eye, we have a balanced distribution. 
 
 <img src="image/level_balanced.png" width="600" height="250" />
 
