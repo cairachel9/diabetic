@@ -10,20 +10,49 @@ During the summer of 2018 and the following school year, I had the opportunity t
 
 <img align = "left" src="image/1000_left.jpeg" width="258" height="172" />
 
-Around 40% to 45% of Americans with diabetes have some stage of the disease. Progression to vision impairment can be slowed or averted if DR is detected in time, however this can be difficult as the disease often shows few symptoms until it is too late to provide effective treatment.
+Around 45% of Americans with diabetes have some stage of the disease. Progression to vision impairment can be slowed or averted if DR is detected in time, however this can be difficult as the disease often shows few symptoms until it is too late to provide effective treatment.
 
-Currently, detecting DR is a time-consuming and manual process that requires a trained clinician to examine and evaluate digital color fundus photographs of the retina. By the time human readers submit their reviews, often a day or two later, the delayed results lead to lost follow up, miscommunication, and delayed treatment.
+Presently, detecting DR is a manual time-consuming process that requires a trained clinician to examine and evaluate digital fundus photographs of the retina. By the time human readers submit their reviews, sometimes several days later, the delayed results lead to lost miscommunication, follow up, and delayed treatment.
 
-## Convolutional Neural Network
+## Computer Vision through Convolutional Neural Network
 
-Convolutional Neural Networks (CNNs), a branch of deep learning, have an impressive record for applications in image analysis and interpretation, including medical imaging. Network architectures designed to work with image data were routinely built already in 1970s with useful applications and surpassed other approaches to challenging tasks like handwritten character recognition. However, it wasn’t until several breakthroughs in neural networks such as the implementation of dropout, rectified linear units and the accompanying increase in computing power through graphical processor units (GPUs) that they became viable for more complex image recognition problems. Presently, large CNNs are used to successfully tackle highly complex image recognition tasks with many object classes to an impressive standard. CNNs are used in many current state-of-the-art image classification tasks such as the annual ImageNet and COCO challenges.
+Convolutional Neural Networks (CNNs), a branch of deep learning, have an impressive record for applications in image analysis and interpretation, including medical imaging. However, it wasn’t until several breakthroughs in neural networks such as the implementation of dropout, rectified linear units and the accompanying increase in computing power through graphical processor units (GPUs) that they became viable for more complex image recognition problems. Presently, large CNNs are used to successfully tackle highly complex computer vision tasks with many object classes to an impressive standard. CNNs are used in many current state-of-the-art image classification tasks such as the annual ImageNet challenges.
 
 ## CNN for Diabetic Retinopathy
-Two main issues exist within automated grading and particularly CNNs. One is achieving a desirable offset in sensitivity (patients correctly identified as having DR) and specificity (patients correctly identified as not having DR). This is significantly harder for national criteria which is a five class problem in to normal, mild DR, moderate DR, severe DR, and proliferative DR classes. Furthermore, overfitting is a major issue in neural networks. Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed. In the dataset, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.
+
+[Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) is feed-forward neural network.  It mainly consists of an input layer, many hidden layers (such as convolutional relu, pooling, flatten, fully connected and softmax layers) and a final multi-label classificationlayer. CNN methodology involves two stages of processing, a time consuming training stage where millions of images went through CNN architecture on many iterations to finalize the parameters of each layer (finalize the model parameters) and a second real-time prediction stage where each image in test dataset is feeded into the trained model to score and validate the model.
+
+<img src="image/CNN_DR.jpeg" width="500" height="200" />
+
+The output of the above framework will emit a multi-class prediction with confidence score on each category
+..* 65% No DR (Normal)
+..* 15% Category-2 DR
+..* 10% Category-4 DR
+
+However, there are two issues with CNN methods on DR detection. One is achieving a desirable offset in sensitivity (patients correctly identified as having DR) and specificity (patients correctly identified as not having DR). This is significantly harder for a five class problem of normal, mild DR, moderate DR, severe DR, and proliferative DR classes. Second is the overfitting problem. Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed.
 
 # Our Work
 ## Methodology
-## Results
+### Stages of diabetic retinopathy (DR) with increasing severity
+### Datasets
+#### Kaggle DR competition dataset
+#### Messidor dataset
+### CNN Architectures
+#### InceptionV3
+#### VGG16
+### Optimizing CNN
+#### Preprocessing
+#### Data Augentation
+Five different transformation types are used here, including flipping, rotation, rescaling, shearing and translation. See the following table for details
+
+#### Unbalanced training data set
+Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed. In the dataset, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.
+
+### Training, Gradient Descent
+### Training, Pretrained model
+### Evaluation, Attention Map
+
+## Prilimary Results
 
 # Related Work
 # References
