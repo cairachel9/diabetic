@@ -22,7 +22,7 @@ Convolutional Neural Networks (CNNs), a branch of deep learning, have an impress
 
 [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) is feed-forward neural network.  It mainly consists of an input layer, many hidden layers (such as convolutional relu, pooling, flatten, fully connected and softmax layers) and a final multi-label classificationlayer. CNN methodology involves two stages of processing, a time consuming training stage where millions of images went through CNN architecture on many iterations to finalize the parameters of each layer (finalize the model parameters) and a second real-time prediction stage where each image in test dataset is feeded into the trained model to score and validate the model.
 
-<img src="image/CNN_DR.jpeg" width="500" height="200" />
+<img src="image/CNN_DR.png" width="500" height="200" />
 
 The output of the above framework will emit a multi-class prediction with confidence score on each category
 ..* 65% No DR (Normal)
