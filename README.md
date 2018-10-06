@@ -1,5 +1,7 @@
 # Introduction 
 
+<img align = "right" src="image/NIH.png" width="120" height="80" />
+
 During the summer of 2018 and the following school year, I had the opportunity to work in **National Institute of Health (NIH)** Lister Hill Center to study convolutional neural network for early detection of diabetic retinopathy eye disease.  The project was conducted under the mentorship of Dr. Jongwoo Kim.
 
 ## Diabetic retinopathy
