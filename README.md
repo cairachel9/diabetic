@@ -22,7 +22,7 @@ Convolutional Neural Networks (CNNs), a branch of deep learning, have an impress
 
 [Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) is feed-forward neural network.  It mainly consists of an input layer, many hidden layers (such as convolutional relu, pooling, flatten, fully connected and softmax layers) and a final multi-label classificationlayer. CNN methodology involves two stages of processing, a time consuming training stage where millions of images went through CNN architecture on many iterations to finalize the parameters of each layer (finalize the model parameters) and a second real-time prediction stage where each image in test dataset is feeded into the trained model to score and validate the model.
 
-<img src="image/CNN_DR.png" width="500" height="200" />
+<img src="image/CNN_DR.png" width="750" height="200" />
 
 The output of the above framework will emit a multi-class prediction with confidence score on each category
 * 65% No DR (Normal)
@@ -32,21 +32,43 @@ The output of the above framework will emit a multi-class prediction with confid
 However, there are two issues with CNN methods on DR detection. One is achieving a desirable offset in sensitivity (patients correctly identified as having DR) and specificity (patients correctly identified as not having DR). This is significantly harder for a five class problem of normal, mild DR, moderate DR, severe DR, and proliferative DR classes. Second is the overfitting problem. Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed.
 
 # Our Work
+
+Our experiment was conducted on the Linux platform with NVidia Tesla K80 GPU.  The environment was hosted by Google Colab and Kaggle.
+
 ## Methodology
-### Stages of diabetic retinopathy (DR) with increasing severity
+
 ### Datasets
 #### Kaggle DR competition dataset
 #### Messidor dataset
+
+### Stages of diabetic retinopathy (DR) with increasing severity
+The following figures show the 5 class DR classification in our study, range from DR_0 (No DR) to DR_5 Proliferative DR (Proliferative DR).
+
+<img src="image/5_DR.png" width="750" height="300" />
+
+#### Unbalanced training data set
+Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed. 
+
+<img float="left" src="image/level_unbalanced.png" width="200" height="200" />
+
+In the dataset, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.  We used the the sampling with replacement statistics technique to boost up the data samples in category 2, 4 and 5:
+
+<img src="image/level_balanced.png" width="200" height="200" />
+
 ### CNN Architectures
 #### InceptionV3
 #### VGG16
 ### Optimizing CNN
 #### Preprocessing
-#### Data Augentation
-Five different transformation types are used here, including flipping, rotation, rescaling, shearing and translation. See the following table for details
+#### Data Augmentation
+Five different transformation types are used here, including flipping, rotation, rescaling, shearing and translation. See the following table for details:
 
-#### Unbalanced training data set
-Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed. In the dataset, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.
+|Transformation|Description|
+|Rotation|0-360|
+|Flipping|0 (without flipping) or 1 (with flipping|
+|Shearing|Randomly with angle between -15 and 15|
+|Rescaling|Randomly with scaling factor between 1/1.6 and 1.6|
+|Translation|Randomly with shift between -10 and 10 pixels|
 
 ### Training, Gradient Descent
 ### Training, Pretrained model
@@ -57,6 +79,9 @@ Skewed datasets cause the network to over-fit to the class most prominent in the
 The work is still ongoing.
 
 # Related Work
+
+https://www.kaggle.com/kmader/inceptionv3-for-retinopathy-gpu-hr/notebook
+
 # References
 
 1. Varun Gulshan, Lily Peng, Marc Coram. "Development and Validation of a Deep Learning Algorithm for Detection of Diabetic Retinopathy in Retinal Fundus Photographs" JAMA Network, Decemeber 1, 2016. https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/45732.pdf
