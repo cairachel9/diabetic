@@ -6,7 +6,7 @@ During the summer of 2018 and the following school year, I had the opportunity t
 
 [Diabetic retinopathy](http://en.wikipedia.org/wiki/Diabetic_retinopathy) is the leading cause of blindness in the working-age population of the developed world. It is estimated to affect over 93 million people.
 
-![DR eye image](image/1000_left.jpeg = 288x259){:style="float: left;margin-right: 7px;margin-top: 7px;"}
+<img align = "left" src="image/1000_left.jpeg" width="388" height="259" />
 
 Around 40% to 45% of Americans with diabetes have some stage of the disease. Progression to vision impairment can be slowed or averted if DR is detected in time, however this can be difficult as the disease often shows few symptoms until it is too late to provide effective treatment.
 
