@@ -39,7 +39,7 @@ We explored the use of deep convolutional neural network methodology for the aut
 
 In this project, we evaluated several CNN architecture (Inception Network, VGG16) on their performance in DR image recognition.  We applied various standard techniques to cleanse and augment the data, we also optimized the CNN network to accomodate the skewed data sets.
 
-Our experiment was conducted on the Linux platform with NVidia Tesla K80 GPU.  The environment was hosted by Google Colab and Kaggle.
+Our experiment was conducted on the hosted Linux platform with NVidia Tesla K80 GPU.  The environment was hosted by Google Colab and Kaggle.
 
 ### Datasets
 #### Kaggle DR competition dataset
@@ -68,21 +68,29 @@ For the eye distribution between left and right eye, we have a balanced distribu
 
 ### CNN Architectures
 
-There are various CNN architecutres proposed in the academia: VGG16, Inception, ResNet, GoogLeNet.  [This pyImageSearch article](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/) has a good introduction to many poppular CNN architectures.
+There are various CNN architecutres proposed in the academia: VGG16, Inception, ResNet, GoogLeNet.  [This pyImageSearch article](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/) has a good introduction to many poppular CNN architectures.  In our study, we evaulated the performance of InceptionV3 vs. VGG16
 
 #### InceptionV3
 <img src="image/InceptionV3.png" width="600" height="220" />
 
 The Inception microarchiveture was first introduced by Szegedy et al. in their 2014 pagper [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842).  The goal of the inception module is to act as "multi-level feature extractor" by computing 1x1, 3x3 and 5x5 convolutions within the same module of the network.  The original incarnation of this architecture was called GoogLeNet, but subsequent manifestations have simply been called Inception vN where N is the version number put out by Google.
 
-The weights for Inception V3 are smaller than both VGG and ResNet coming in at size of 96MB.
+Our implementation of InceptionV3 was mostly inspired from the work on [Kevin Mader](https://www.kaggle.com/kmader/inceptionv3-for-retinopathy-gpu-hr/notebook)
 
 #### VGG16 and VGG19
 <img align="left" src="image/imagenet_vgg16.png"/>
 
 The VGG network architecture was introduced by Simonyan and Zissermain in their 2014 paper: [Very Deep Convolutional Networks for Large Scale Image Recognition](https://arxiv.org/abs/1409.1556). VGG network is characterized by its simplicity, using only 3x3 convolutional layers stacked on top of each other in increasing depth.  Reducing volumn size is handled by max pooling.  Two fully-connected layers, each with 4096 nodes are then followed by a softmax classifier (above).  The "16" and "19" stands for the number of weight layers in the network.
 
-The drawbacks for VGGNetwork are one it is slow to train and the network architecture weights themselves are quite large large.
+#### Comparison between InceptionV3 and VGG16
+
+On the high level the difference between the two networks are:
+1. The weights for Inception V3 are smaller than both VGG and ResNet coming in at size of 96MB.
+2. The drawbacks for VGGNetwork are one it is slow to train and the network architecture weights themselves are quite large large.
+
+|Network|Accuracy|
+|InceptionV3|60%|
+|VGG16||
 
 ### Optimizing CNN
 #### Preprocessing
@@ -106,7 +114,6 @@ The work is still ongoing.
 
 # Related Work
 
-https://www.kaggle.com/kmader/inceptionv3-for-retinopathy-gpu-hr/notebook
 
 # References
 
