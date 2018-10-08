@@ -16,7 +16,7 @@ Presently, detecting DR is a manual time-consuming process that requires a train
 
 ## Computer Vision through Convolutional Neural Network
 
-Convolutional Neural Networks (CNNs), a branch of deep learning, have an impressive record for applications in image analysis and interpretation, including medical imaging. However, it wasn’t until several breakthroughs in neural networks such as the implementation of dropout, rectified linear units and the accompanying increase in computing power through graphical processor units (GPUs) that they became viable for more complex image recognition problems. Presently, large CNNs are used to successfully tackle highly complex computer vision tasks with many object classes to an impressive standard. CNNs are used in many current state-of-the-art image classification tasks such as the annual ImageNet challenges.
+Convolutional Neural Networks (CNNs), a part of deep learning, have a great record for applications in image analysis and interpretation, including medical imaging. However, it wasn’t until several breakthroughs in neural networks such as the implementation of dropout, rectified linear units and the accompanying increase in computing power through graphical processor units (GPUs) that they became viable for more complex image recognition problems. Presently, large CNNs are used to successfully tackle highly complex computer vision tasks with many object classes to an impressive standard. CNNs are used in many current state-of-the-art image classification tasks such as the annual ImageNet challenges.
 
 ## CNN for Diabetic Retinopathy detection
 
@@ -33,13 +33,22 @@ However, there are two issues with CNN methods on DR detection. One is achieving
 
 # Our Work
 
-Our experiment was conducted on the Linux platform with NVidia Tesla K80 GPU.  The environment was hosted by Google Colab and Kaggle.
+We explored the use of deep convolutional neural network methodology for the automatic classification of diabetic retinopathy using color fundus image.  We evaluated several CNN architectures and studied various tuning techniques in model training.
 
 ## Methodology
 
+In this project, we evaluated several CNN architecture (Inception Network, VGG16) on their performance in DR image recognition.  We applied various standard techniques to cleanse and augment the data, we also optimized the CNN network to accomodate the skewed data sets.
+
+Our experiment was conducted on the Linux platform with NVidia Tesla K80 GPU.  The environment was hosted by Google Colab and Kaggle.
+
 ### Datasets
 #### Kaggle DR competition dataset
+
+Our main dataset is based on the [Kaggle Diatebic Retinopathy Detection competition] (https://www.kaggle.com/c/diabetic-retinopathy-detection) carried out in 2016.  The main dataset contains 35000 eye images with 5 stages of DR disease.
+
 #### Messidor dataset
+
+We also augmented the dataset with [Messidor dataset](http://www.adcis.net/en/Download-Third-Party/Messidor.html) which contains 1200 images with 4 stage DR progression.  Although the Messidor dataset is smaller, it has less labeling errors.
 
 ### Stages of diabetic retinopathy (DR) with increasing severity
 The following figures show the 5 class DR classification in our study, range from DR_0 (No DR) to DR_5 Proliferative DR (Proliferative DR).
@@ -58,8 +67,23 @@ For the eye distribution between left and right eye, we have a balanced distribu
 <img src="image/level_balanced.png" width="600" height="250" />
 
 ### CNN Architectures
+
+There are various CNN architecutres proposed in the academia: VGG16, Inception, ResNet, GoogLeNet.  [This pyImageSearch article](https://www.pyimagesearch.com/2017/03/20/imagenet-vggnet-resnet-inception-xception-keras/) has a good introduction to many poppular CNN architectures.
+
 #### InceptionV3
-#### VGG16
+<img src="image/InceptionV3.png" width="600" height="220" />
+
+The Inception microarchiveture was first introduced by Szegedy et al. in their 2014 pagper [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842).  The goal of the inception module is to act as "multi-level feature extractor" by computing 1x1, 3x3 and 5x5 convolutions within the same module of the network.  The original incarnation of this architecture was called GoogLeNet, but subsequent manifestations have simply been called Inception vN where N is the version number put out by Google.
+
+The weights for Inception V3 are smaller than both VGG and ResNet coming in at size of 96MB.
+
+#### VGG16 and VGG19
+<img align="left" src="image/imagenet_vgg16.png"/>
+
+The VGG network architecture was introduced by Simonyan and Zissermain in their 2014 paper: [Very Deep Convolutional Networks for Large Scale Image Recognition](https://arxiv.org/abs/1409.1556). VGG network is characterized by its simplicity, using only 3x3 convolutional layers stacked on top of each other in increasing depth.  Reducing volumn size is handled by max pooling.  Two fully-connected layers, each with 4096 nodes are then followed by a softmax classifier (above).  The "16" and "19" stands for the number of weight layers in the network.
+
+The drawbacks for VGGNetwork are one it is slow to train and the network architecture weights themselves are quite large large.
+
 ### Optimizing CNN
 #### Preprocessing
 #### Data Augmentation
