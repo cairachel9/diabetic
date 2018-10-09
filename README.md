@@ -124,13 +124,13 @@ AUC is an abbrevation for area under the curve.  It is used in classification an
 
 ### Precision per category and heatmap
 
-As we described earlier, the precision/recall on each of the DR category are different.  The top (category 0) and bottom (category 4) has higher precision scores.
-
 <img align = "left" src="image/precision.png" width="240" height="200" />
+<img align = "right" src="image/heatmap.png" width="240" height="200" />
+
+As we described earlier, the precision/recall on each of the DR category are different.  The top (category 0) and bottom (category 4) has higher precision scores.
 
 And similarly we show the heatmap on the right and as expected, most of the data points are concentrated on the top left corner for category 0.
 
-<img align = "right" src="image/heatmap.png" width="240" height="200" />
 
 
 ## Future Work
