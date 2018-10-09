@@ -90,7 +90,7 @@ On the high level the difference between the two networks are:
 
 |Network|Accuracy|
 |InceptionV3|60%|
-|VGG16|   |
+|VGG16|To be filled|
 
 ### Optimizing CNN
 #### Preprocessing
@@ -108,7 +108,7 @@ Five different transformation types are used here, including flipping, rotation,
 ### Training, Pretrained model
 ### Optimization, Attention Map
 
-<img align = "right" src="image/AttentionMap.png" />
+<img src="image/AttentionMap.png" />
 
 [Attention Map](http://akosiorek.github.io/ml/2017/10/14/visual-attention.html) is a mechnism to expand the capabilities of neural network, they enable focusing on specific parts of the input.  It has been shown they can improve the performance results of neural processing.  We have shown here some eye pictures and the attention maps exerted on the region to help processing.
 
@@ -120,7 +120,7 @@ The work is still ongoing.  Here we show some prelimary results of training usin
 
 AUC is an abbrevation for area under the curve.  It is used in classification analysis to determine which of the model predicts the classes best.
 
-<img align = "right" src="image/AUC.png" width="240" height="200" />
+<img src="image/AUC.png" width="240" height="200" />
 
 ### Precision per category and heatmap
 
@@ -131,6 +131,7 @@ As we described earlier, the precision/recall on each of the DR category are dif
 And similarly we show the heatmap on the right and as expected, most of the data points are concentrated on the top left corner for category 0.
 
 <img align = "right" src="image/heatmap.png" width="240" height="200" />
+
 
 ## Future Work
 
