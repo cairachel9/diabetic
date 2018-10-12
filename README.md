@@ -137,6 +137,12 @@ And similarly we show the heatmap on the right and as expected, most of the data
 
 # Related Work
 
+There are extensive research being carried out on methods of DR with encouraging results especially in the area of binary classification. 
+
+In [1], Gulshan et al. from Google Labs have trained a custom neural network using 128000 expert graded images.  They achieved sensitivity of 97% on EysPACS-1 dataset.  It doesn't give a breakdown result of each sub-category of DR.  Based on the authors' discussions, the results are benefited from large training dataset, the training images are graded multiple times by experts, but the results are still limited to a specific DR not for the combination of DR and other eye diseaess.  In [2], Pratt et al. have trained a custom neural network with about a dozen layers.  The training dataset was based on 35000 Kaggle competition data sets, they were using preprocessing techniques such as color normalization and agumentation.  They achived accuracy of about 75% overall with the accuracy on middle classes around 50%. In [3], Lam et. al in Standford group has trained the neural network model based on GoogleNet and AlexNet.  They have used two datasets with images coming from Kaggle and Messidor-1 datasets.  They have tuned the network performance using techniques such as batch normalization, L2 regularization, gradient descent update rules.  They were able to achieve accuracy of 85% and 75% on no DR and severe DR cases respectively but only 29% on mild DR.  They also compared the network performance on a pretrained network with the pretrained model achieves 74% accuracy. 
+
+Prior to the rise of neural network, most of the research on DR classification was based on traditional machine learning methods such as support vector machine, random forest and XGBoost.  The work usually involved heavy feature extraction and hence can only be done on a small dataset.  In [10], Xu et al compared the implementations with XGBoost (accuracy 89%) and CNN (accuracy 95%), the training was based on MxNet. In [11], Jaafar et al. based their study on a hand-made top-down image segmentation and feature extraction tool to extract features such as blood vessels, foves, exudates and optic discs.  The achieved accuracy of 93% on a very small 147 images dataset. In [4] Ramon et al. based their study on a traditional random forest learning model on a small 100 image dataset with about 90% accuracy.  They also compared their result with the traditional logistic regression with is about 70% accuracy.
+
 
 # References
 
@@ -149,3 +155,5 @@ And similarly we show the heatmap on the right and as expected, most of the data
 7. Jaafar, Hussain F., Asoke K. Nandi, and Waleed Al-Nuaimy. "Automated Detection And Grading Of Hard Exudates From Retinal Fundus Images." 19th European Signal Processing Conference (EUSIPCO 2011), 2011, 66-70.
 8. "National Diabetes Statistics Report, 2014." Centers for Disease Control and Prevention. January 1, 2014. Accessed December 26, 2014.
 9. "Diabetes." World Health Organization. November 1, 2014. Accessed December 26, 2014. http://www.who.int/mediacentre/factsheets/fs312/en/.
+10. Xu Kele, Feng Dawei, Mi Haibo, "Deep Convolutional Neural Network-Based Early Automated Detection of Diabetic Retinopathy Using Fundus Image" , Second CCF Bioinformatics Conference, 23 November 2017.  https://www.mdpi.com/1420-3049/22/12/2054
+11. Hussain F. Jaafar, =Asoke K. Nandi, Waleed Al-Nuaimy.  "AUTOMATED DETECTION AND GRADING OF HARD EXUDATES FROM RETINAL FUNDUS IMAGES ", 19th European Signal Processing Conference, September, 2011.  https://www.eurasip.org/Proceedings/Eusipco/Eusipco2011/papers/1569416955.pdf
