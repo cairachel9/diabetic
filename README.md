@@ -89,6 +89,7 @@ On the high level the difference between the two networks are:
 2. The drawbacks for VGGNetwork are one it is slow to train and the network architecture weights themselves are quite large large.
 
 |Network|Accuracy|
+|-------|--------|
 |InceptionV3|60%|
 |VGG16|To be filled|
 
@@ -98,6 +99,7 @@ On the high level the difference between the two networks are:
 Five different transformation types are used here, including flipping, rotation, rescaling, shearing and translation. See the following table for details:
 
 |Transformation|Description|
+|--------------|-----------|
 |Rotation|0-360|
 |Flipping|0 (without flipping) or 1 (with flipping|
 |Shearing|Randomly with angle between -15 and 15|
