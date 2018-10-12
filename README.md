@@ -106,8 +106,39 @@ Five different transformation types are used here, including flipping, rotation,
 |Rescaling|Randomly with scaling factor between 1/1.6 and 1.6|
 |Translation|Randomly with shift between -10 and 10 pixels|
 
-### Training, Gradient Descent
-### Training, Pretrained model
+### Study on different image sizes
+### Study on different sampling techniques
+### Study on different image preprocessing techniques
+
+As described above, there are various image preprocessing techniques  we can use 
+
+### Study on different data sample sizes
+
+The image size from Kaggle competition dataset is 512x512, various neural networks usually prefers different image input size: VGG prefers 224x224 while InceptionV3 prefers 299x299.
+
+We tried various image size for the training with the result below:
+
+|Image Size|Accuracy|
+|----------|--------|
+|224x224|TBD|
+|299x299|TBD|
+|512x512|TBD|
+
+### Training with pretrained model
+
+Building and training a deep neural network (e.g. VGG19) from sratch takes a lot of time.  [Transferred learning](https://en.wikipedia.org/wiki/Transfer_learning) is a technqueue to transfer a model parameter pretrained in a common public dataset (e.g. ImageNet) to the new image domains.
+
+Here are our result on training time and accuracy achieved between pre-trained model and train-from-scratch:
+
+|Training Method|Accuracy|Training Time|
+|---------------|--------|-------------|
+|VGG Pretrained|TBD|TBD|
+|VGG From scratch|TBD|TBD|
+|Inception Pretrained|TBD|TBD|
+|Inception From scratch|TBD|TBD|
+
+In most of our study in this project, we are using pretrained model
+
 ### Optimization, Attention Map
 
 <img src="image/AttentionMap.png" />
@@ -116,7 +147,7 @@ Five different transformation types are used here, including flipping, rotation,
 
 ## Prelimary Results
 
-The work is still ongoing.  Here we show some prelimary results of training using 35000 images with the above optmization techniqueues:
+We are still in the middle of carrying out various tuning and comparison study as described above.  Here we show some prelimary results of training using 35000 images: 
 
 ### Model Prediction with AUC scores:
 
