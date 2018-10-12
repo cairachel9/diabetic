@@ -131,9 +131,16 @@ As we described earlier, the precision/recall on each of the DR category are dif
 
 And similarly we show the heatmap on the right and as expected, most of the data points are concentrated on the top left corner for category 0.
 
-
-
 ## Future Work
+
+Our work in DR classification with CNN neural network is still very primitive.  Given more time and resources, we would like to extend the study to cover:
+
+1. Comparison study on more neural network architectures such as GoogleNet, ResNet
+2. Training on high graded datasets with high fidelity images 
+3. Training on more balanced datasets on each subcategory of DR.
+4. Better data sampling techniques, reusing data sample with replace=True in sampling might cause data leakage;
+5. Better target varialbe (e.g. age) normalization
+6. Tune with attention related techniques to focus on areas
 
 # Related Work
 
