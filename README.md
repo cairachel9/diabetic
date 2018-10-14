@@ -94,7 +94,6 @@ On the high level the difference between the two networks are:
 |VGG16|To be filled|
 
 ### Optimizing CNN
-#### Preprocessing
 #### Data Augmentation
 Five different transformation types are used here, including flipping, rotation, rescaling, shearing and translation. See the following table for details:
 
@@ -107,13 +106,8 @@ Five different transformation types are used here, including flipping, rotation,
 |Translation|Randomly with shift between -10 and 10 pixels|
 
 ### Study on different image sizes
-### Study on different sampling techniques
-### Study on different image preprocessing techniques
 
 As described above, there are various image preprocessing techniques  we can use 
-
-### Study on different data sample sizes
-
 The image size from Kaggle competition dataset is 512x512, various neural networks usually prefers different image input size: VGG prefers 224x224 while InceptionV3 prefers 299x299.
 
 We tried various image size for the training with the result below:
@@ -123,6 +117,35 @@ We tried various image size for the training with the result below:
 |224x224|TBD|
 |299x299|TBD|
 |512x512|TBD|
+
+### Study on different image preprocessing techniques
+
+As described above, there are various image preprocessing techniques we can apply before the training. The following tables shows the experiment result with and without those preprocessings:
+
+|Transformation|Accuracy|
+|--------------|-----------|
+|Rotation|TBD|
+|Flipping|TBD|
+|Shearing|TBD|
+|Rescaling|TBD|
+|Translation|TBD|
+
+### Study on different sampling techniques and different data sample size
+
+Because of the skewed data distribution among 5 DR categories, we only have a few hunderd data samples in category 4 and category 5.  One technique to compensate for low data volume is to replace and reuse the sample data.  We used this technique and we also show the impact on different data sampling on the final outcome:
+
+|Sampleing Technique|Accuracy|
+|--------------|-----------|
+|Reuse Data Sample|TBD|
+|No data reuse|TBD|
+
+|Data sample size|Accuracy|
+|--------------|-----------|
+|1000|TBD|
+|5000|TBD|
+|10000|TBD|
+|20000|TBD|
+|30000|TBD|
 
 ### Training with pretrained model
 
