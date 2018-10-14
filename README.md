@@ -124,11 +124,10 @@ As described above, there are various image preprocessing techniques we can appl
 
 |Transformation|Accuracy|
 |--------------|-----------|
-|Rotation|TBD|
-|Flipping|TBD|
-|Shearing|TBD|
-|Rescaling|TBD|
-|Translation|TBD|
+|90 degree Rotation|60%|
+|Horizontal Flipping|63%|
+|Vertical Flipping|72%|
+|Shearing, Cropping|59%|
 
 ### Study on different sampling techniques and different data sample size
 
