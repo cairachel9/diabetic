@@ -114,9 +114,9 @@ We tried various image size for the training with the result below:
 
 |Image Size|Accuracy|
 |----------|--------|
-|224x224|TBD|
-|299x299|TBD|
-|512x512|TBD|
+|224x224|53%|
+|299x299|59%|
+|512x512|62%|
 
 ### Study on different image preprocessing techniques
 
@@ -141,11 +141,13 @@ Because of the skewed data distribution among 5 DR categories, we only have a fe
 
 |Data sample size|Accuracy|
 |--------------|-----------|
-|1000|TBD|
-|5000|TBD|
+|750|62%|
+|1500|TBD|
 |10000|TBD|
 |20000|TBD|
-|30000|TBD|
+|35000|57%|
+
+Note the reason that 1000 sample size seems have higher accuracy is because there is not enough samples in category 3 and 4 to drag down the accuracy.
 
 ### Training with pretrained model
 
