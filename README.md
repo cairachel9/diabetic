@@ -2,25 +2,25 @@
 
 <img align = "right" src="image/NIH.png" width="60" height="40" />
 
-During the summer of 2018 and the following school year, I had the opportunity to work in **National Institute of Health (NIH)** Lister Hill Center to study convolutional neural network for early detection of diabetic retinopathy eye disease.  The project was conducted under the mentorship of Dr. Jongwoo Kim.
+During the summer of 2018 and the following school year, I had the opportunity to work in the **National Institute of Health (NIH)** Lister Hill Center to study convolutional neural network for early detection of diabetic retinopathy eye disease.  The project was conducted under the mentorship of Dr. Jongwoo Kim.
 
-## Diabetic retinopathy
+## DR (Diabetic retinopathy)
 
 [Diabetic retinopathy](http://en.wikipedia.org/wiki/Diabetic_retinopathy) is the leading cause of blindness in the working-age population of the developed world. It is estimated to affect over 93 million people.
 
 <img align = "left" src="image/1000_left.jpeg" width="258" height="172" />
 
-Around 45% of Americans with diabetes have some stage of the disease. Progression to vision impairment can be slowed or averted if DR is detected in time, however this can be difficult as the disease often shows few symptoms until it is too late to provide effective treatment.
+Around 45% of Americans with diabetes have some stages of the disease. Progression to vision impairment can be slowed or averted if DR is detected in time, however this can be difficult as the disease often shows few symptoms until it is too late to provide effective treatment.
 
 Presently, detecting DR is a manual time-consuming process that requires a trained clinician to examine and evaluate digital fundus photographs of the retina. By the time human readers submit their reviews, sometimes several days later, the delayed results lead to lost miscommunication, follow up, and delayed treatment.
 
 ## Computer Vision through Convolutional Neural Network
 
-Convolutional Neural Networks (CNNs), a part of deep learning, have a great record for applications in image analysis and interpretation, including medical imaging. However, it wasn’t until several breakthroughs in neural networks such as the implementation of dropout, rectified linear units and the accompanying increase in computing power through graphical processor units (GPUs) that they became viable for more complex image recognition problems. Presently, large CNNs are used to successfully tackle highly complex computer vision tasks with many object classes to an impressive standard. CNNs are used in many current state-of-the-art image classification tasks such as the annual ImageNet challenges.
+Convolutional Neural Networks (CNNs), a branch of deep learning, have a great record for applications in image analysis and interpretation, including medical imaging. However, it wasn’t until several breakthroughs in neural networks such as the implementation of dropout, rectified linear units and the accompanying increase in computing power through graphical processor units (GPUs) that CNNs became viable for more complex image recognition problems. Presently, large CNNs are used to successfully tackle highly complex computer vision tasks with many object classes to an impressive standard. CNNs are used in many current state-of-the-art image classification tasks such as the annual ImageNet challenges.
 
 ## CNN for Diabetic Retinopathy detection
 
-[Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) is feed-forward neural network.  It mainly consists of an input layer, many hidden layers (such as convolutional relu, pooling, flatten, fully connected and softmax layers) and a final multi-label classificationlayer. CNN methodology involves two stages of processing, a time consuming training stage where millions of images went through CNN architecture on many iterations to finalize the parameters of each layer (finalize the model parameters) and a second real-time prediction stage where each image in test dataset is feeded into the trained model to score and validate the model.
+[Convolutional Neural Network](https://en.wikipedia.org/wiki/Convolutional_neural_network) is a feed-forward neural network.  It mainly consists of an input layer, many hidden layers (such as convolutional relu, pooling, flatten, fully connected and softmax layers) and a final multi-label classification layer. CNN methodology involves two stages of processing, a time consuming training stage where millions of images went through CNN architecture through many iterations to finalize the model parameters of each layer and a second real-time prediction stage where each image in test dataset is feeded into the trained model to score and validate the model.
 
 <img src="image/CNN_DR.png" width="750" height="200" />
 
@@ -29,7 +29,7 @@ The output of the above framework will emit a multi-class prediction with confid
 * 15% Category-2 DR
 * 10% Category-4 DR
 
-However, there are two issues with CNN methods on DR detection. One is achieving a desirable offset in sensitivity (patients correctly identified as having DR) and specificity (patients correctly identified as not having DR). This is significantly harder for a five class problem of normal, mild DR, moderate DR, severe DR, and proliferative DR classes. Second is the overfitting problem. Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed.
+However, there are two issues with CNN methods on DR detection. One is achieving a desirable offset in sensitivity (patients correctly identified as having DR) and specificity (patients correctly identified as not having DR). This is significantly harder for a five class problem of normal, mild DR, moderate DR, severe DR, and proliferative DR classes. Second problem is the overfitting situation.  Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed.
 
 # Our Work
 
@@ -44,14 +44,14 @@ Our experiment was conducted on the hosted Linux platform with NVidia Tesla K80 
 ### Datasets
 #### Kaggle DR competition dataset
 
-Our main dataset is based on the [Kaggle Diatebic Retinopathy Detection competition] (https://www.kaggle.com/c/diabetic-retinopathy-detection) carried out in 2016.  The main dataset contains 35000 eye images with 5 stages of DR disease.
+Our main dataset is based on the [Kaggle Diatebic Retinopathy Detection competition] (https://www.kaggle.com/c/diabetic-retinopathy-detection) which was carried out in 2016.  The main dataset contains 35000 eye images with 5 stages of DR disease.
 
 #### Messidor dataset
 
 We also augmented the dataset with [Messidor dataset](http://www.adcis.net/en/Download-Third-Party/Messidor.html) which contains 1200 images with 4 stage DR progression.  Although the Messidor dataset is smaller, it has less labeling errors.
 
 ### Stages of diabetic retinopathy (DR) with increasing severity
-The following figures show the 5 class DR classification in our study, range from DR_0 (No DR) to DR_5 Proliferative DR (Proliferative DR).
+The following figures show the 5 class DR classification in our study, ranging from DR_0 (No DR) to DR_5 (Proliferative DR).
 
 <img src="image/5_DR.png" width="750" height="300" />
 
@@ -60,9 +60,9 @@ The following figures show the 5 class DR classification in our study, range fro
 
 Skewed datasets cause the network to over-fit to the class most prominent in the dataset. Large datasets are often massively skewed. 
 
-In the Kaggle dataset with 35000 images, we used less than three percent of images came from the 4th and 5th class, meaning changes had to be made in our network to ensure it could still learn the features of these images.  To overcome the difference in data points distribution, we used the the sampling with [replacement statistics technique](https://web.ma.utexas.edu/users/parker/sampling/repl.htm) to boost up the data samples in category 2, 4 and 5:
+In the Kaggle dataset with 35000 images, we used less than three percent of images came from the 4th and 5th class.  This means changes had to be made in our network to ensure it could still learn the features of these images.  To overcome the difference in data points distribution, we used the the sampling with [replacement statistics technique](https://web.ma.utexas.edu/users/parker/sampling/repl.htm) to boost up the data samples in category 2, 4 and 5:
 
-For the eye distribution between left and right eye, we have a balanced distribution. 
+For the eye distribution between left and right eye, we have a balanced distribution after replacing techniques.
 
 <img src="image/level_balanced.png" width="600" height="250" />
 
@@ -75,7 +75,7 @@ There are various CNN architecutres proposed in the academia: VGG16, Inception, 
 
 The Inception microarchiveture was first introduced by Szegedy et al. in their 2014 pagper [Going Deeper with Convolutions](https://arxiv.org/abs/1409.4842).  The goal of the inception module is to act as "multi-level feature extractor" by computing 1x1, 3x3 and 5x5 convolutions within the same module of the network.  The original incarnation of this architecture was called GoogLeNet, but subsequent manifestations have simply been called Inception vN where N is the version number put out by Google.
 
-Our implementation of InceptionV3 was mostly inspired from the work on [Kevin Mader](https://www.kaggle.com/kmader/inceptionv3-for-retinopathy-gpu-hr/notebook)
+Our implementation of InceptionV3 was mostly inspired from the work by [Kevin Mader](https://www.kaggle.com/kmader/inceptionv3-for-retinopathy-gpu-hr/notebook)
 
 #### VGG16 and VGG19
 <img align="left" src="image/imagenet_vgg16.png"/>
@@ -86,7 +86,7 @@ The VGG network architecture was introduced by Simonyan and Zissermain in their 
 
 On the high level the difference between the two networks are:
 1. The weights for Inception V3 are smaller than both VGG and ResNet coming in at size of 96MB.
-2. The drawbacks for VGGNetwork are one it is slow to train and the network architecture weights themselves are quite large large.
+2. One drawback for VGGNetwork are one it is slow to train and the network architecture weights themselves are quite large large.
 
 |Network|Accuracy|
 |-------|--------|
@@ -95,7 +95,7 @@ On the high level the difference between the two networks are:
 
 ### Optimizing CNN
 #### Data Augmentation
-Five different transformation types are used here, including flipping, rotation, rescaling, shearing and translation. See the following table for details:
+Researchers usually use some image transformation techniques to boost up the quality of the images.  Five different transformation types are used here, including flipping, rotation, rescaling, shearing and translation. See the following table for details:
 
 |Transformation|Description|
 |--------------|-----------|
@@ -107,10 +107,9 @@ Five different transformation types are used here, including flipping, rotation,
 
 ### Study on different image sizes
 
-As described above, there are various image preprocessing techniques  we can use 
-The image size from Kaggle competition dataset is 512x512, various neural networks usually prefers different image input size: VGG prefers 224x224 while InceptionV3 prefers 299x299.
+The image size from Kaggle competition dataset is 3072x2048 but this image size would be too big for most the training platforms.  Researchers usually scale down the image size before training. Various neural networks usually prefer different image input size: VGG prefers 224x224 while InceptionV3 prefers 299x299.
 
-We tried various image size for the training with the result below:
+We tried various image size for the training with the result below.  From our experiment, the 512x512 image size still gives up the best result.
 
 |Image Size|Accuracy|
 |----------|--------|
@@ -131,12 +130,12 @@ As described above, there are various image preprocessing techniques we can appl
 
 ### Study on different sampling techniques and different data sample size
 
-Because of the skewed data distribution among 5 DR categories, we only have a few hunderd data samples in category 4 and category 5.  One technique to compensate for low data volume is to replace and reuse the sample data.  We used this technique and we also show the impact on different data sampling on the final outcome:
+Because of the skewed data distribution among 5 DR categories, we only have a few hunderd data samples in category 4 and category 5.  One technique to compensate for low data volume in those categories is to replace and reuse the sample data.  We used this technique and we also show the impact on different data sampling on the final outcome:
 
 |Sampleing Technique|Accuracy|
 |--------------|-----------|
-|Reuse Data Sample|TBD|
-|No data reuse|TBD|
+|Reuse Data Sample|60%|
+|No data reuse|35%|
 
 |Data sample size|Accuracy|
 |--------------|-----------|
@@ -144,24 +143,24 @@ Because of the skewed data distribution among 5 DR categories, we only have a fe
 |1500|TBD|
 |10000|TBD|
 |20000|TBD|
-|35000|57%|
+|35000|60%|
 
-Note the reason that 1000 sample size seems have higher accuracy is because there is not enough samples in category 3 and 4 to drag down the accuracy.
+The table above shows the result for different sampling size, the variance on the result is not significant.  It has more to do with the randomness in the sampling and data distribution among DR categories.
 
 ### Training with pretrained model
 
-Building and training a deep neural network (e.g. VGG19) from sratch takes a lot of time.  [Transferred learning](https://en.wikipedia.org/wiki/Transfer_learning) is a technqueue to transfer a model parameter pretrained in a common public dataset (e.g. ImageNet) to the new image domains.
+Building and training a deep neural network (e.g. VGG19) from sratch takes a lot of time.  [Transferred learning](https://en.wikipedia.org/wiki/Transfer_learning) is a technqueue to transfer a model parameter pretrained in a common public dataset (e.g. ImageNet) to the new image domains.  Since the final categories are different between ImageNet (categorize for common objects) and DR (categorize for eye disease).  We usually use the notop pretrained model, meaning we will retrain the final classification layer.
 
 Here are our result on training time and accuracy achieved between pre-trained model and train-from-scratch:
 
 |Training Method|Accuracy|Training Time|
 |---------------|--------|-------------|
-|VGG Pretrained|TBD|TBD|
+|VGG Pretrained|35%|TBD|
 |VGG From scratch|TBD|TBD|
 |Inception Pretrained|TBD|TBD|
 |Inception From scratch|TBD|TBD|
 
-In most of our study in this project, we are using pretrained model
+In most of our study in this project, we are using pretrained model.
 
 ### Optimization, Attention Map
 
@@ -186,7 +185,7 @@ AUC is an abbrevation for area under the curve.  It is used in classification an
 
 As we described earlier, the precision/recall on each of the DR category are different.  The top (category 0) and bottom (category 4) has higher precision scores.
 
-And similarly we show the heatmap on the right and as expected, most of the data points are concentrated on the top left corner for category 0.
+And similarly we show the heatmap on the right.  As expected, most of the data points are concentrated on the top left corner for category 0. Note that in the heatmap, each row represents a actual lable, each column represents a predicted label.
 
 ## Future Work
 
