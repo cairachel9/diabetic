@@ -41,6 +41,24 @@ In this project, we evaluated several CNN architecture (Inception Network, VGG16
 
 Our experiment was conducted on the hosted Linux platform with NVidia Tesla K80 GPU.  The environment was hosted by Google Colab and Kaggle.
 
+### Terminology
+
+Most of the tests are measuring two key aspects of the training model:
+
+* **Accuracy** measures true positive rate.  
+** **Binary Accuracy** Whether the model can accurately predict an image is DR 
+** **Categorical Accuracy** Which category/stage of DR is the image in.
+** In our study, we will be using categorical accuracy in most of the time since there are 5 category of DR.  Categorical accuracy are lower than Binary accuracy.
+* **AUC** is an abbrevation for area under the curve. AUC is a more holistic measurement considering both true negative and true positive.  The closer AUC is to 1, the better of the model performance.
+
+Other terminologies used in the report are from standard statistics domain:
+
+* **precision**: positive predictive value
+* **recall**: true positive rate
+* **sensitivity**: true positive rate
+* **specificity**: true negavite rate
+* **heatmap** measures the distrbution of precision/recall on each of the DR category
+
 ### Datasets
 #### Kaggle DR competition dataset
 
@@ -103,7 +121,7 @@ On the high level the difference among the three networks are:
 |VGG16|59%|0.67|
 |ResNet50|56%|0.50|
 
-From the initial result, VGG16 gives a slight better performance on both Accuracy and AUC result
+From the initial test result on 1000 image sampling, VGG16 gives a slight better performance on both Accuracy and AUC result
 
 ### Optimizing CNN
 #### Data Augmentation
