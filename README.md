@@ -182,7 +182,19 @@ Note that the running time didn't go linearly with the training sample size.  Th
 
 ### Training with pretrained model
 
-Building and training a deep neural network (e.g. VGG19) from sratch takes a lot of time.  [Transferred learning](https://en.wikipedia.org/wiki/Transfer_learning) is a technqueue to transfer a model parameter pretrained in a common public dataset (e.g. ImageNet) to the new image domains.  Since the final categories are different between ImageNet (categorize for common objects) and DR (categorize for eye disease).  We usually use the notop pretrained model, meaning we will retrain the final classification layer.
+Building and training a deep neural network (e.g. VGG19) from sratch takes a lot of time.  [Transferred learning](https://en.wikipedia.org/wiki/Transfer_learning) is a technqueue to transfer a model parameter pretrained in a common public dataset (e.g. ImageNet) to the new image domains.  Since the final categories are different between ImageNet (categorize for common objects) and DR (categorize for eye disease).  We usually use the notop pretrained model, and then add several layers of normalization and fully connected layer on the top.  And we will retrain the final classification layer.
+
+The following table shows how we custom/add on top of the existing pretrained model (VGG16):
+
+|Layer (type)|Output Shape|Param Number|   
+|------------|------------|------------|
+|input_1 (InputLayer)|(None, 224, 224, 3)|0|
+|vgg16 (Model)|(None, 7, 7, 512)|14714688|
+|batch_normalization_1|(Batch (None, 7, 7, 512)|2048|
+|flatten (Flatten)|(None, 25088)|0|
+|fcDense1 (Dense)|(None, 4096)|102764544|
+|fcDense2 (Dense)|(None, 4096)|16781312|
+|fcOutput (Dense)|(None, 5)|20485|
 
 Here are our result on training time and accuracy achieved between pre-trained model and train-from-scratch for 1000 images training:
 
