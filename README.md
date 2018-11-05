@@ -37,7 +37,7 @@ We explored the use of deep convolutional neural network methodology for the aut
 
 ## Methodology
 
-In this project, we evaluated several CNN architecture (Inception Network, VGG16and Microsoft Resnet) on their performance in DR image recognition.  We applied various standard techniques to cleanse and augment the data, we also optimized the CNN network to accomodate the skewed data sets.
+In this project, we evaluated several CNN architecture (Inception Network, VGG16 and Microsoft Resnet) on their performance in DR image recognition.  We applied various standard techniques to cleanse and augment the data, we also optimized the CNN network to accomodate the skewed data sets.
 
 Our experiment was conducted on the hosted Linux platform with NVidia Tesla K80 GPU.  The environment was hosted by Google Colab and Kaggle.
 
@@ -81,6 +81,15 @@ Our implementation of InceptionV3 was mostly inspired from the work by [Kevin Ma
 <img align="left" src="image/imagenet_vgg16.png"/>
 
 The VGG network architecture was introduced by Simonyan and Zissermain in their 2014 paper: [Very Deep Convolutional Networks for Large Scale Image Recognition](https://arxiv.org/abs/1409.1556). VGG network is characterized by its simplicity, using only 3x3 convolutional layers stacked on top of each other in increasing depth.  Reducing volumn size is handled by max pooling.  Two fully-connected layers, each with 4096 nodes are then followed by a softmax classifier (above).  The "16" and "19" stands for the number of weight layers in the network.
+
+#### ResNet50
+<img align="left" src="image/resnet.png"/>
+
+Resnet is the short name for Residual Network.  Many visual recognition tasks have greatly benefited from deep convolutional neural network models.  Over the years there is a trend to go more deeper for more complex tasks.  But as we go deeper, the training of neural networks becomes difficult.
+
+In general, in a deep convolutional neural network, several layers are stacked and are trained to the task at hand. The network learns several low/mid/high level features at the end of its layers. In residual learning, instead of trying to learn some features, we try to learn some residual. Residual can be simply understood as subtraction of feature learned from input of that layer. ResNet does this using shortcut connections (directly connecting input of nth layer to some (n+x)th layer. It has proved that training this form of networks is easier than training simple deep convolutional neural networks and also the problem of degrading accuracy is resolved.
+
+ResNet50 is a 50 layer Residual Network.  For the details of the Resnet architecutre, take a look at this Micorsoft research paper: [Deep Residual Learning for Image Recognition](https://arxiv.org/pdf/1512.03385.pdf)
 
 #### Comparison between InceptionV3, VGG16 and Resnet
 
