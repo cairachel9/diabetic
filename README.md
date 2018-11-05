@@ -137,30 +137,31 @@ Because of the skewed data distribution among 5 DR categories, we only have a fe
 |Reuse Data Sample|60%|
 |No data reuse|35%|
 
-|Data sample size|Accuracy|
-|--------------|-----------|
-|750|62%|
-|1500|TBD|
-|10000|TBD|
-|20000|TBD|
-|35000|60%|
+|Data sample size|Accuracy|AUC|Running Time|
+|--------------|-----------|------|------|
+|1000|59%|0.67|12 min|
+|1500|62%|0.66|12 min|
+|3500|57%|0.63|12 min|
+|10000|64%|0.66|54 min|
+|20000|64%|0.69|76 min|
+|35000|61%|0.66|144 min|
 
 The table above shows the result for different sampling size, the variance on the result is not significant.  It has more to do with the randomness in the sampling and data distribution among DR categories.
+
+Note that the running time didn't go linearly with the training sample size.  This is because with more data sample sizes the less number of epoches it was able to complete.  Once tensorflow detect that there are no improvement after 6 epoches, it will abort the training.
 
 ### Training with pretrained model
 
 Building and training a deep neural network (e.g. VGG19) from sratch takes a lot of time.  [Transferred learning](https://en.wikipedia.org/wiki/Transfer_learning) is a technqueue to transfer a model parameter pretrained in a common public dataset (e.g. ImageNet) to the new image domains.  Since the final categories are different between ImageNet (categorize for common objects) and DR (categorize for eye disease).  We usually use the notop pretrained model, meaning we will retrain the final classification layer.
 
-Here are our result on training time and accuracy achieved between pre-trained model and train-from-scratch:
+Here are our result on training time and accuracy achieved between pre-trained model and train-from-scratch for 1000 images training:
 
-|Training Method|Accuracy|Training Time|
-|---------------|--------|-------------|
-|VGG Pretrained|35%|TBD|
-|VGG From scratch|TBD|TBD|
-|Inception Pretrained|TBD|TBD|
-|Inception From scratch|TBD|TBD|
+|Training Method|Accuracy|AUC|Training Time|
+|---------------|--------|----|-------------|
+|VGG Pretrained|59%|0.67|12 min|
+|VGG From scratch|52%|0.46|12 min|
 
-In most of our study in this project, we are using pretrained model.
+VGG training from scratch didn't give me better result than pretrained model.  We think the image quality of the DR images are not necessarily better than the images from imagenet.  Also the running time in scratch trainning didn't go much longer because tensorflow abort the training when there is no improvement between 6 consecutive epochs.  In most of our study in this project, we are using pretrained model.
 
 ### Optimization, Attention Map
 
