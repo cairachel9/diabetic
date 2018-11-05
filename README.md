@@ -266,6 +266,8 @@ In [1], Gulshan et al. from Google Labs have trained a custom neural network usi
 
 Prior to the rise of neural network, most of the research on DR classification was based on traditional machine learning methods such as support vector machine, random forest and XGBoost.  The work usually involved heavy feature extraction and hence can only be done on a small dataset.  In [10], Xu et al compared the implementations with XGBoost (accuracy 89%) and CNN (accuracy 95%), the training was based on MxNet. In [11], Jaafar et al. based their study on a hand-made top-down image segmentation and feature extraction tool to extract features such as blood vessels, foves, exudates and optic discs.  The achieved accuracy of 93% on a very small 147 images dataset. In [4] Ramon et al. based their study on a traditional random forest learning model on a small 100 image dataset with about 90% accuracy.  They also compared their result with the traditional logistic regression with is about 70% accuracy.
 
+There are various CNN architecutres proposed in the academia, in our research we studied [12] for Inception architecture, [13] for VGG16 design and [14] for Resnet.
+
 
 # References
 
@@ -280,3 +282,6 @@ Prior to the rise of neural network, most of the research on DR classification w
 9. "Diabetes." World Health Organization. November 1, 2014. Accessed December 26, 2014. http://www.who.int/mediacentre/factsheets/fs312/en/.
 10. Xu Kele, Feng Dawei, Mi Haibo, "Deep Convolutional Neural Network-Based Early Automated Detection of Diabetic Retinopathy Using Fundus Image" , Second CCF Bioinformatics Conference, 23 November 2017.  https://www.mdpi.com/1420-3049/22/12/2054
 11. Hussain F. Jaafar, =Asoke K. Nandi, Waleed Al-Nuaimy.  "AUTOMATED DETECTION AND GRADING OF HARD EXUDATES FROM RETINAL FUNDUS IMAGES ", 19th European Signal Processing Conference, September, 2011.  https://www.eurasip.org/Proceedings/Eusipco/Eusipco2011/papers/1569416955.pdf
+12. Christian Szegedy, Wei Liu, Yangqing Jia. "Going Deeper with Convolutions", September 2014, https://arxiv.org/abs/1409.4842
+13. Karen Simonyan, Andrew Zisserman. "Very Deep Convolutional Networks for Large-Scale Image Recognition", September 2014, https://arxiv.org/abs/1409.1556
+14. Kaimine He, Xiangyu Zhang, Shaoqing Ren. "Deep Residual Learning for Image Recognition".  Dec 2015, https://arxiv.org/pdf/1512.03385.pdf
