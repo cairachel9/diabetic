@@ -149,7 +149,7 @@ We tried various image size for the training with the result below.  From our ex
 
 ### Study on different image preprocessing techniques
 
-As described above, there are various image preprocessing techniques we can apply before the training. The following tables shows the experiment result with and without those preprocessings:
+As described above, there are various image preprocessing techniques we can apply before the training. The following table shows the experiment result with and without those preprocessings:
 
 |Transformation|Accuracy|
 |--------------|-----------|
@@ -211,7 +211,7 @@ VGG training from scratch didn't give me better result than pretrained model.  W
 
 [Attention Map](http://akosiorek.github.io/ml/2017/10/14/visual-attention.html) is a mechnism to expand the capabilities of neural network, they enable focusing on specific parts of the input.  It has been shown they can improve the performance results of neural processing.  We have shown here some eye pictures and the attention maps exerted on the region to help processing.
 
-The following table shows the layer we are adding on top of pretrained model (vgg16) to build attention map:
+The following table shows the layers we are adding on top of pretrained model (vgg16) to build attention map:
 
 |Layer (type)|Output Shape|Param Number|Connected to|
 |------------|------------|------------|------------|
