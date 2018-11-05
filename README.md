@@ -230,7 +230,14 @@ The following table shows the layers we are adding on top of pretrained model (v
 
 ## Prelimary Results
 
-We are still in the middle of carrying out various tuning and comparison study as described above.  Here we show some prelimary results of training using 35000 images: 
+The following table shows the result of with and without attention map optimization:
+
+|Test Name|Accuracy|AUC|
+|---------|--------|---|
+|With Attention Map|59%|0.67|
+|Without Attention Map|58%|0.64|
+
+The attention map optimization brings in a slight edge in performance.
 
 ### Model Prediction with AUC scores:
 
