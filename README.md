@@ -211,6 +211,23 @@ VGG training from scratch didn't give me better result than pretrained model.  W
 
 [Attention Map](http://akosiorek.github.io/ml/2017/10/14/visual-attention.html) is a mechnism to expand the capabilities of neural network, they enable focusing on specific parts of the input.  It has been shown they can improve the performance results of neural processing.  We have shown here some eye pictures and the attention maps exerted on the region to help processing.
 
+The following table shows the layer we are adding on top of pretrained model (vgg16) to build attention map:
+
+|Layer (type)|Output Shape|Param Number|Connected to|
+|------------|------------|------------|------------|
+|input_1 (InputLayer)|(None, 224, 224, 3)|0|   |
+|vgg16 (Model)|(None, 7, 7, 512)|14714688|input_1[0][0]|
+|batch_normalization_1|(BatchNor (None, 7, 7, 512)|2048|vgg16[1][0]|
+|dropout_1 (Dropout)|(None, 7, 7, 512)|0|batch_normalization_1[0][0]|
+|conv2d_1 (Conv2D)|(None, 7, 7, 64)|32832|dropout_1[0][0]|
+|conv2d_2 (Conv2D)|(None, 7, 7, 16)|1040|conv2d_1[0][0]|
+|conv2d_3 (Conv2D)|(None, 7, 7, 8)|136|conv2d_2[0][0]|
+|conv2d_4 (Conv2D)|(None, 7, 7, 1)|9|conv2d_3[0][0]|
+|conv2d_5 (Conv2D)|(None, 7, 7, 512)|512|conv2d_4[0][0]|
+|multiply_1 (Multiply)|(None, 7, 7, 512)|0|conv2d_5[0][0]|
+|global_average_pooling2d_1 (Glo|(None, 512)|0|multiply_1[0][0]|
+|global_average_pooling2d_2 (Glo|(None, 512)|0|conv2d_5[0][0]|
+
 ## Prelimary Results
 
 We are still in the middle of carrying out various tuning and comparison study as described above.  Here we show some prelimary results of training using 35000 images: 
