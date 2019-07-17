@@ -2,7 +2,7 @@
 
 <img align = "right" src="image/NIH.png" width="60" height="40" />
 
-During the summer of 2018 and the following school year, I had the opportunity to work in the **National Institute of Health (NIH)** Lister Hill Center to study convolutional neural network for early detection of diabetic retinopathy eye disease.  The project was conducted under the mentorship of Dr. Jongwoo Kim.  In our study, I adapted several CNN networks (Inception, VGG16, Resnet) for DR stage classification.  I compared the effectiveness of above networks.  We also designed experiments to evaluate the effect of training on different parameters (different training sample sizes, different image sizes).  I also optimized the network with features such as attention map and experimented with different image preprocessing.
+During the summer of 2018 and the following school year, I had the opportunity to work in the **National Institute of Health (NIH)** Lister Hill Center to study convolutional neural network for early detection of diabetic retinopathy eye disease. The project was conducted under the mentorship of Dr. Jongwoo Kim.  In our study, I adapted several CNN networks (Inception, VGG16, Resnet) for DR stage classification.  I compared the effectiveness of above networks.  We also designed experiments to evaluate the effect of training on different parameters (different training sample sizes, different image sizes).  I also optimized the network with features such as attention map and experimented with different image preprocessing.
 
 ## DR (Diabetic retinopathy)
 
